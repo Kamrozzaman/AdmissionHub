@@ -28,7 +28,7 @@
     </RelativeLayout>
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -37,8 +37,8 @@
         android:layout_marginRight="15dp"
 
         android:background="@drawable/rounded_edittext"
-        android:hint="Email"
-        android:inputType="textEmailAddress"/>
+        android:hint="Username"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/passwpord"

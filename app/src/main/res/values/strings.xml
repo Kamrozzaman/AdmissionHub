@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AdmissionHub</string>
+
+    <string-array name="Group_names">
+
+        <item>Science</item>
+        <item>Commerce</item>
+        <item>Humanities</item>
+
+    </string-array>
 </resources>
