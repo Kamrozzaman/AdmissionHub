@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class logSign extends AppCompatActivity implements View.OnClickListener{
 
-    TextView signup;
+    TextView signup,forgotpassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,9 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
         signup = (TextView) findViewById(R.id.signup);
         signup.setOnClickListener(this);
+
+        forgotpassword = (TextView) findViewById(R.id.forgotpassword);
+        forgotpassword.setOnClickListener(this);
     }
 
     @Override
@@ -29,6 +32,10 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
             Intent intent = new Intent(logSign.this,signUp.class);
             startActivity(intent);
         }
-
+        if(v.getId()==R.id.forgotpassword)
+        {
+            Intent intent = new Intent(logSign.this,forgotPassword.class);
+            startActivity(intent);
+        }
     }
 }
