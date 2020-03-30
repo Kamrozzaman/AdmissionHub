@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class logSign extends AppCompatActivity implements View.OnClickListener{
 
     TextView signup,forgotpassword;
+    Button loginButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,9 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
         forgotpassword = (TextView) findViewById(R.id.forgotpassword);
         forgotpassword.setOnClickListener(this);
+
+        loginButton=(Button) findViewById(R.id.login);
+        loginButton.setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +40,11 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
         if(v.getId()==R.id.forgotpassword)
         {
             Intent intent = new Intent(logSign.this,forgotPassword.class);
+            startActivity(intent);
+        }
+        if(v.getId()==R.id.login)
+        {
+            Intent intent = new Intent(logSign.this,dashboard.class);
             startActivity(intent);
         }
     }
