@@ -23,9 +23,14 @@
             android:layout_marginRight="10dp"
             android:textSize="30sp"
             android:text="ADMISSION HUB"
+            android:textStyle="italic"
             android:fontFamily="@font/custom1"
             android:textColor="#3C3939"/>
+
+
     </RelativeLayout>
+
+
 
     <EditText
         android:id="@+id/username"
