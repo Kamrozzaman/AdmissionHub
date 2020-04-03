@@ -120,6 +120,7 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
             userdetails.setFllname(fllname);
             userdetails.setUsrname(usrname);
             userdetails.setPssword(pssword);
+            
 
             userdetails.setPhn(phn);
             userdetails.setSsgpa(ssgpa);
