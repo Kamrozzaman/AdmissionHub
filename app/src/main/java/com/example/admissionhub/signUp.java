@@ -11,16 +11,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.graphics.drawable.Drawable;
 
-public class signUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener{
+public class signUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     String[] Group_names;
     Database db;
     Spinner group;
-    EditText fullname,username,password,confirmpassword,phone,sscgpa,hscgpa;
+    EditText fullname, username, password, confirmpassword, phone, sscgpa, hscgpa;
     Button signup;
     String grp;
     UserDetails userdetails;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +45,10 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         signup.setOnClickListener(this);
 
 
-
         Group_names = getResources().getStringArray(R.array.Group_names);
 
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Group_names,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Group_names, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         group.setAdapter(adapter);
         group.setOnItemSelectedListener(this);
@@ -57,13 +58,14 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-       grp = parent.getItemAtPosition(position).toString();
+        grp = parent.getItemAtPosition(position).toString();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
 
     @Override
     public void onClick(View v) {
@@ -75,25 +77,64 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         String phn = phone.getText().toString();
         String ssgpa = sscgpa.getText().toString();
         String hsgpa = hscgpa.getText().toString();
+        int var = pssword.compareTo(confirmpssword);
+
 
         //Toast.makeText(this, pssword+" "+confirmpssword, Toast.LENGTH_SHORT).show();
 
+        if (fllname.length() == 0) {
 
-               userdetails.setFllname(fllname);
-               userdetails.setUsrname(usrname);
-               userdetails.setPssword(pssword);
+            fullname.setError("");
+        }
 
-               userdetails.setPhn(phn);
-               userdetails.setSsgpa(ssgpa);
-               userdetails.setHsgpa(hsgpa);
-               userdetails.setGrp(grp);
+        if (usrname.length() == 0) {
+            username.setError("");
+
+        }
+
+        if (pssword.length() == 0) {
+
+            password.setError("");
+        }
+
+        if (confirmpssword.length() == 0) {
+            confirmpassword.setError("");
+
+        }
+
+        if (phn.length() == 0) {
+            phone.setError("");
+        }
+
+        if (ssgpa.length() == 0) {
+            sscgpa.setError("");
+        }
+
+        if (hsgpa.length() == 0) {
+            hscgpa.setError("");
+        } else if (var != 0) {
+            Toast.makeText(this, "password and confirm password does not match", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            userdetails.setFllname(fllname);
+            userdetails.setUsrname(usrname);
+            userdetails.setPssword(pssword);
+
+            userdetails.setPhn(phn);
+            userdetails.setSsgpa(ssgpa);
+            userdetails.setHsgpa(hsgpa);
+            userdetails.setGrp(grp);
 
 
-               db.insertData(userdetails);
+            db.insertData(userdetails);
 
-               Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show();
-               Intent intent = new Intent(signUp.this, logSign.class);
-               startActivity(intent);
+
+            Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(signUp.this, logSign.class);
+            startActivity(intent);
+
+        }
 
 
     }
