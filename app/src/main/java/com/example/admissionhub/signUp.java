@@ -1,5 +1,6 @@
 package com.example.admissionhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,20 +14,29 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.graphics.drawable.Drawable;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class signUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     String[] Group_names;
-    Database db;
     Spinner group;
     EditText fullname, username, password, confirmpassword, phone, sscgpa, hscgpa;
     Button signup;
     String grp;
-    UserDetails userdetails;
+    DatabaseReference dr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+       dr = FirebaseDatabase.getInstance().getReference();
 
         fullname = (EditText) findViewById(R.id.fullname);
         username = (EditText) findViewById(R.id.username);
@@ -38,8 +48,7 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         signup = (Button) findViewById(R.id.signup);
         group = (Spinner) findViewById(R.id.group);
 
-        userdetails = new UserDetails();
-        db = new Database(this);
+
 
 
         signup.setOnClickListener(this);
@@ -117,18 +126,7 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
         } else {
 
-            userdetails.setFllname(fllname);
-            userdetails.setUsrname(usrname);
-            userdetails.setPssword(pssword);
-            
-
-            userdetails.setPhn(phn);
-            userdetails.setSsgpa(ssgpa);
-            userdetails.setHsgpa(hsgpa);
-            userdetails.setGrp(grp);
-
-
-            db.insertData(userdetails);
+            userRegister();
 
 
             Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show();
@@ -138,5 +136,22 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         }
 
 
+    }
+
+    private void userRegister() {
+
+        String fllname = fullname.getText().toString();
+        String usrname = username.getText().toString();
+        String pssword = password.getText().toString();
+        String confirmpssword = confirmpassword.getText().toString();
+        String phn = phone.getText().toString();
+        String ssgpa = sscgpa.getText().toString();
+        String hsgpa = hscgpa.getText().toString();
+
+
+        String key = dr.push().getKey();
+        userInfo userinfo = new userInfo(fllname,usrname,pssword,phn,ssgpa,hsgpa);
+
+        dr.child(key).setValue(userinfo);
     }
 }

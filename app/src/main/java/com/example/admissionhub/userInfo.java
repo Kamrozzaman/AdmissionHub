@@ -1,8 +1,19 @@
 package com.example.admissionhub;
 
-public class UserDetails {
+public class userInfo {
 
-    private  String fllname,usrname,pssword,phn,ssgpa,hsgpa,grp;
+    private String fllname,usrname,pssword,phn,ssgpa,hsgpa;
+
+    public userInfo(String fllname, String usrname, String pssword, String phn, String ssgpa, String hsgpa) {
+        this.fllname = fllname;
+        this.usrname = usrname;
+        this.pssword = pssword;
+        this.phn = phn;
+        this.ssgpa = ssgpa;
+        this.hsgpa = hsgpa;
+
+
+    }
 
     public String getFllname() {
         return fllname;
@@ -28,8 +39,6 @@ public class UserDetails {
         this.pssword = pssword;
     }
 
-
-
     public String getPhn() {
         return phn;
     }
@@ -52,13 +61,5 @@ public class UserDetails {
 
     public void setHsgpa(String hsgpa) {
         this.hsgpa = hsgpa;
-    }
-
-    public String getGrp() {
-        return grp;
-    }
-
-    public void setGrp(String grp) {
-        this.grp = grp;
     }
 }
