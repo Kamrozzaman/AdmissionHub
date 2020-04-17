@@ -36,7 +36,7 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-       dr = FirebaseDatabase.getInstance().getReference();
+       dr = FirebaseDatabase.getInstance().getReference("USERINFO");
 
         fullname = (EditText) findViewById(R.id.fullname);
         username = (EditText) findViewById(R.id.username);

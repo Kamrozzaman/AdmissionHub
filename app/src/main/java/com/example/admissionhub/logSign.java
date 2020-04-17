@@ -1,17 +1,32 @@
 package com.example.admissionhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class logSign extends AppCompatActivity implements View.OnClickListener{
 
     TextView signup,forgotpassword;
+    EditText User , Password;
+
+    String password,usrname;
     Button loginButton;
+    private DatabaseReference ref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +34,13 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
         getSupportActionBar().hide();
 
+        ref = FirebaseDatabase.getInstance().getReference().child("USERINFO");
+
         signup = (TextView) findViewById(R.id.signup);
         signup.setOnClickListener(this);
+
+        User = findViewById(R.id.username);
+        Password = findViewById(R.id.password);
 
         forgotpassword = (TextView) findViewById(R.id.forgotpassword);
         forgotpassword.setOnClickListener(this);
@@ -32,20 +52,69 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
-        if(v.getId()==R.id.signup)
-        {
-            Intent intent = new Intent(logSign.this,signUp.class);
+        if (v.getId() == R.id.signup) {
+            Intent intent = new Intent(logSign.this, signUp.class);
             startActivity(intent);
         }
-        if(v.getId()==R.id.forgotpassword)
-        {
-            Intent intent = new Intent(logSign.this,forgotPassword.class);
+        if (v.getId() == R.id.forgotpassword) {
+            Intent intent = new Intent(logSign.this, forgotPassword.class);
             startActivity(intent);
         }
-        if(v.getId()==R.id.login)
-        {
-            Intent intent = new Intent(logSign.this,dashboard.class);
-            startActivity(intent);
+        if (v.getId() == R.id.login) {
+
+            usrname = User.getText().toString();
+            password = Password.getText().toString();
+
+            if (usrname.length() == 0) {
+                User.setError("");
+
+            }
+
+            if (password.length() == 0) {
+                Password.setError("");
+
+            }
+
+            else{
+            ref.addValueEventListener(new ValueEventListener() {
+
+                int e = 0;
+
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        userInfo userinfo = dataSnapshot1.getValue(userInfo.class);
+
+                        if (usrname.equals(userinfo.getUsrname()) && password.equals(userinfo.getPssword())) {
+                            Intent intent = new Intent(logSign.this, dashboard.class);
+                            startActivity(intent);
+                            User.setText(null);
+                            Password.setText(null);
+                            e = 1;
+                            break;
+
+
+                        }
+
+                    }
+
+                    if (e == 0) {
+                        Toast.makeText(logSign.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
         }
+
+    }
     }
 }

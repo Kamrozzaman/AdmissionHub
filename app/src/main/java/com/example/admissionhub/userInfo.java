@@ -4,6 +4,10 @@ public class userInfo {
 
     private String fllname,usrname,pssword,phn,ssgpa,hsgpa;
 
+    public userInfo(){
+
+    }
+
     public userInfo(String fllname, String usrname, String pssword, String phn, String ssgpa, String hsgpa) {
         this.fllname = fllname;
         this.usrname = usrname;
