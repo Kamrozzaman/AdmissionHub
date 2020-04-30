@@ -8,18 +8,8 @@
     tools:openDrawer="start"
     tools:context=".dashboard">
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/navigationId"
-        android:background="@color/colorWhite"
-        app:menu="@menu/nav_menu_layout"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        >
 
 
-    </com.google.android.material.navigation.NavigationView>
 
     <GridView
         android:verticalSpacing="10dp"
