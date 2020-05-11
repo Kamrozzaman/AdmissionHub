@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +19,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.ProviderQueryResult;
+import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,14 +32,14 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
     Button signup;
     String grp;
     DatabaseReference dr;
-
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-       dr = FirebaseDatabase.getInstance().getReference("USERINFO");
+        dr = FirebaseDatabase.getInstance().getReference("USERINFO");
 
         fullname = (EditText) findViewById(R.id.fullname);
         username = (EditText) findViewById(R.id.username);
@@ -49,7 +52,7 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         group = (Spinner) findViewById(R.id.group);
 
 
-
+        mAuth = FirebaseAuth.getInstance();
 
         signup.setOnClickListener(this);
 
@@ -126,17 +129,85 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
         } else {
 
-            userRegister();
+            UserRegister();
+
+            //userRegister();
 
 
-            Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show();
+           /* Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(signUp.this, logSign.class);
-            startActivity(intent);
+            startActivity(intent);*/
 
         }
 
 
     }
+
+    private void UserRegister() {
+        String email = username.getText().toString().trim();
+        String pssword = password.getText().toString().trim();
+
+        //Checking validity of email
+        if(email.isEmpty())
+        {
+            username.setError("Enter an email address");
+            username.requestFocus();
+            return;
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        {
+            username.setError("Enter a valid email address");
+            username.requestFocus();
+            return;
+        }
+
+        mAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+            @Override
+            public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                boolean check=task.getResult().getSignInMethods().isEmpty();
+
+                if(!check) {
+                    username.setError("You are already registered with this E-mail address!");
+                    username.requestFocus();
+                    return;
+                }
+            }
+        });
+
+        if(pssword.isEmpty())
+        {
+            password.setError("Enter a password");
+            password.requestFocus();
+            return;
+        }
+
+        if(pssword.length()<6)
+        {
+            password.setError("Minimum length of a password should be 6");
+            password.requestFocus();
+            return;
+        }
+
+        mAuth.createUserWithEmailAndPassword(email,pssword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    //Toast.makeText(getApplicationContext(), "Authentication Successful!", Toast.LENGTH_SHORT).show();
+                    userRegister();
+
+                    Toast.makeText(getApplicationContext(), "Sign Up Successful!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(signUp.this, logSign.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Sign Up Not Successful!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+    }
+
 
     private void userRegister() {
 
