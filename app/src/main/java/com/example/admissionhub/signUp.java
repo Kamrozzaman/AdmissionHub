@@ -218,10 +218,11 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         String phn = phone.getText().toString();
         String ssgpa = sscgpa.getText().toString();
         String hsgpa = hscgpa.getText().toString();
+        //grp = parent.getItemAtPosition(position).toString();
 
 
         String key = dr.push().getKey();
-        userInfo userinfo = new userInfo(fllname,usrname,pssword,phn,ssgpa,hsgpa);
+        userInfo userinfo = new userInfo(fllname,usrname,pssword,phn,ssgpa,hsgpa,grp);
 
         dr.child(key).setValue(userinfo);
     }

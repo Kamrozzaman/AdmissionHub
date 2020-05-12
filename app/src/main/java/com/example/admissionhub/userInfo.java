@@ -2,21 +2,29 @@ package com.example.admissionhub;
 
 public class userInfo {
 
-    private String fllname,usrname,pssword,phn,ssgpa,hsgpa;
+    private String fllname,usrname,pssword,phn,ssgpa,hsgpa,grp;
 
     public userInfo(){
 
     }
 
-    public userInfo(String fllname, String usrname, String pssword, String phn, String ssgpa, String hsgpa) {
+    public userInfo(String fllname, String usrname, String pssword, String phn, String ssgpa, String hsgpa,String grp) {
         this.fllname = fllname;
         this.usrname = usrname;
         this.pssword = pssword;
         this.phn = phn;
         this.ssgpa = ssgpa;
         this.hsgpa = hsgpa;
+        this.grp = grp;
 
+    }
 
+    public String getGrp() {
+        return grp;
+    }
+
+    public void setGrp(String grp) {
+        this.grp = grp;
     }
 
     public String getFllname() {
