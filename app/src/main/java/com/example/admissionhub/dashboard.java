@@ -111,7 +111,8 @@ public class dashboard extends AppCompatActivity {
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
         {
-            Toast.makeText(dashboard.this, "User Profile Clicked!", Toast.LENGTH_SHORT).show();
+            Intent intt = new Intent(dashboard.this,userprofile.class);
+            startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
         {
