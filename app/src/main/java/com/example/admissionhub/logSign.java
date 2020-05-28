@@ -76,6 +76,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
             }
 
             else{
+
             ref.addValueEventListener(new ValueEventListener() {
 
                 int e = 0;
@@ -87,7 +88,16 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
                         userInfo userinfo = dataSnapshot1.getValue(userInfo.class);
 
                         if (usrname.equals(userinfo.getUsrname()) && password.equals(userinfo.getPssword())) {
+
                             Intent intent = new Intent(logSign.this, dashboard.class);
+                            intent.putExtra("EMAIL",usrname);
+                            intent.putExtra("PASS",password);
+                            intent.putExtra("FULLNAME",userinfo.getFllname());
+                            intent.putExtra("PHONE",userinfo.getPhn());
+                            intent.putExtra("GROUP",userinfo.getGrp());
+                            intent.putExtra("SSCGPA",userinfo.getSsgpa());
+                            intent.putExtra("HSCGPA",userinfo.getHsgpa());
+
                             startActivity(intent);
                             User.setText(null);
                             Password.setText(null);
@@ -97,6 +107,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
                         }
 
+
                     }
 
                     if (e == 0) {
@@ -105,6 +116,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
 
                 }
+
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {

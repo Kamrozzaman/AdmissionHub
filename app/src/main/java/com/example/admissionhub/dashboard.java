@@ -27,7 +27,7 @@ public class dashboard extends AppCompatActivity {
             R.drawable.quiz_icon};
 
     FirebaseAuth mAuth;
-
+    String email,password,fllname,phn,grp,ssgpa,hsgpa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +35,15 @@ public class dashboard extends AppCompatActivity {
 
         drawerLayout=findViewById(R.id.drawerId);
 
-
-
+        email = getIntent().getStringExtra("EMAIL");
+        //Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
+        password = getIntent().getStringExtra("PASS");
+        fllname = getIntent().getStringExtra("FULLNAME");
+        phn = getIntent().getStringExtra("PHONE");
+        grp = getIntent().getStringExtra("GROUP");
+        //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
+        ssgpa = getIntent().getStringExtra("SSCGPA");
+        hsgpa = getIntent().getStringExtra("HSCGPA");
 
 
 
@@ -80,6 +87,7 @@ public class dashboard extends AppCompatActivity {
                 {
                     //Toast.makeText(dashboard.this, "Quiz Clicked!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(dashboard.this, logSign.class);
+
                     startActivity(intent);
                 }
 
@@ -112,6 +120,15 @@ public class dashboard extends AppCompatActivity {
         else if(item.getItemId()==R.id.userProfileMenuId)
         {
             Intent intt = new Intent(dashboard.this,userprofile.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
