@@ -133,7 +133,9 @@ public class dashboard extends AppCompatActivity {
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
         {
-            Toast.makeText(dashboard.this, "Change Password Clicked!", Toast.LENGTH_SHORT).show();
+            finish();
+            Intent intt = new Intent(dashboard.this,activity_change_password.class);
+            startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)
         {
