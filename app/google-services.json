@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "454659695630",
+    "firebase_url": "https://admissionhub-89298.firebaseio.com",
+    "project_id": "admissionhub-89298",
+    "storage_bucket": "admissionhub-89298.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454659695630:android:af2a0015fe9d19fcd7085f",
+        "android_client_info": {
+          "package_name": "com.example.admissionhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454659695630-dt3h0r4jdisiotkqsacai70fe353p613.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admissionhub",
+            "certificate_hash": "4c9f27642c64c5bcea4bb223e926fd60b05fd4ae"
+          }
+        },
+        {
+          "client_id": "454659695630-227rb5toipc0ptmrg4qmbuar89b962k0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admissionhub",
+            "certificate_hash": "10e5898f3c3421b2afa6c614ddea54d0952b93f2"
+          }
+        },
+        {
+          "client_id": "454659695630-4lamhqgt4d57pkgi1lnv149na4q1s3pm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuM-fO9YHwG-aE_CY8K5DmnZ-_AqW97Kc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454659695630-4lamhqgt4d57pkgi1lnv149na4q1s3pm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
