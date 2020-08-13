@@ -65,7 +65,11 @@ public class dashboard extends AppCompatActivity {
                 }
                 else if(position==1)
                 {
-                    Toast.makeText(dashboard.this, "Eligibility Clicked!", Toast.LENGTH_SHORT).show();
+                    Intent intt = new Intent(dashboard.this, eligibility.class);
+                    intt.putExtra("SSCGPA",ssgpa);
+                    intt.putExtra("HSCGPA",hsgpa);
+
+                    startActivity(intt);
                 }
                 else if(position==2)
                 {
