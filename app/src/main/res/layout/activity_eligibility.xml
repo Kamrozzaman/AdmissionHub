@@ -88,7 +88,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bangladesh Univeristy of Engineering\nand Technology"
+                android:text="Bangladesh Univeristy of Eng.\nand Technology"
                 android:layout_weight="3"
                 android:paddingTop="10dp"
                 android:paddingLeft="10dp"
@@ -192,7 +192,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dhaka Univeristy\n"
+                android:text="Univeristy of Dhaka\n"
                 android:layout_weight="3"
                 android:paddingTop="10dp"
                 android:paddingLeft="10dp"

@@ -61,7 +61,9 @@ public class dashboard extends AppCompatActivity {
 
                 if(position==0)
                 {
-                    Toast.makeText(dashboard.this, "Universities Clicked!", Toast.LENGTH_SHORT).show();
+                    Intent intt = new Intent(dashboard.this, universities.class);
+
+                    startActivity(intt);
                 }
                 else if(position==1)
                 {
