@@ -10,4 +10,42 @@
         <item>Humanities</item>
 
     </string-array>
+
+    <string name="group1">FAQ:1 What are the minimum qualifications of Undergraduate admission?</string>
+    <string name="group2">FAQ:2 Can I apply for Undergraduate program if I appeared in HSC?</string>
+    <string name="group3">FAQ:3 From where I can collect admission form?</string>
+    <string name="group4">FAQ:4 What is the admission fee?</string>
+    <string name="group5">FAQ:5 Which documents I must submit during admission?</string>
+
+    <string-array name="group1">
+
+        <item>Ans: You have to pass SSC and HSC having atleast GPA 3.5 individually.</item>
+
+    </string-array>
+
+    <string-array name="group2">
+
+        <item>Ans: If you have not passed HSC by the time the application period for the programme begins, you are required to submit an officially certified copy of your HSC admit card and registration card.
+            Then you can sit for admission test. If you qualify in the Admission Test, you must have to submit the result of HSC exam. If your result are not published, you will not allowed to get the admission. </item>
+
+    </string-array>
+
+    <string-array name="group3">
+
+        <item>Ans: Admission Form is available at the University website.You can apply online through website.</item>
+
+    </string-array>
+
+    <string-array name="group4">
+
+        <item>Ans: Different Unibversities offer different fee structure.You can check it from respective university website.</item>
+
+    </string-array>
+
+    <string-array name="group5">
+
+        <item>Ans: Photocopies with attestation of all certificates, marks sheet, testimonials,3 copies of recent passport size and 1 copy of stamp size photograph are required</item>
+
+    </string-array>
+
 </resources>

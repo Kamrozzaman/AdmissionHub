@@ -79,7 +79,8 @@ public class dashboard extends AppCompatActivity {
                 }
                 else if(position==3)
                 {
-                    Toast.makeText(dashboard.this, "FAQ Clicked!", Toast.LENGTH_SHORT).show();
+                    Intent intt = new Intent(dashboard.this, FAQ.class);
+                    startActivity(intt);
                 }
                 else if(position==4)
                 {
