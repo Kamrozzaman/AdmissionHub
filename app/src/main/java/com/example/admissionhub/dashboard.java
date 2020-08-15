@@ -24,7 +24,7 @@ public class dashboard extends AppCompatActivity {
 
     private GridView dashboardGridView;
     int[] flags={R.drawable.universities_icon,R.drawable.eligibility_icon,R.drawable.notices_icon,R.drawable.faq_icon,R.drawable.forum_icon,R.drawable.guideline_icon,
-            R.drawable.quiz_icon};
+            R.drawable.quiz_icon,R.drawable.about_icon};
 
     FirebaseAuth mAuth;
     String email,password,fllname,phn,grp,ssgpa,hsgpa;
@@ -96,6 +96,10 @@ public class dashboard extends AppCompatActivity {
                     Intent intent = new Intent(dashboard.this, logSign.class);
 
                     startActivity(intent);
+                }
+                else if(position==7)
+                {
+                    Toast.makeText(dashboard.this, "About Clicked!", Toast.LENGTH_SHORT).show();
                 }
 
             }
