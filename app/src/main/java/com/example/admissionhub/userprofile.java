@@ -39,6 +39,9 @@ public class userprofile extends AppCompatActivity {
         sscgpa = (TextView) findViewById(R.id.sscgpa);
         hscgpa = (TextView) findViewById(R.id.hscgpa);
 
+        ssgpa+=" (SSC)";
+        hsgpa+=" (HSC)";
+
 
             Toast.makeText(this, emal, Toast.LENGTH_SHORT).show();
 

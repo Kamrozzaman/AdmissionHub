@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FAQ"></activity>
+        <activity android:name=".IUT"></activity>
+        <activity android:name=".AUST" />
+        <activity android:name=".JU" />
+        <activity android:name=".Sust" />
+        <activity android:name=".DU" />
+        <activity android:name=".Buet" />
+        <activity android:name=".FAQ" />
         <activity android:name=".universities" />
         <activity android:name=".eligibility" />
         <activity android:name=".activity_change_password" />
