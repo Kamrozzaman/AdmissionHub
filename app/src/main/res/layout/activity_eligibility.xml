@@ -29,7 +29,7 @@
                 android:gravity="center"
                 android:layout_weight="3"
                 android:textSize="20sp"
-
+                android:background="#b1d1e3"
 
                 />
 
@@ -42,6 +42,7 @@
                 android:gravity="center"
                 android:layout_weight="1"
                 android:textSize="20sp"
+                android:background="#b1d1e3"
 
                 />
         </TableRow>
@@ -66,18 +67,16 @@
 
                 />
 
-            <TextView
+            <ImageView
                 android:id="@+id/aust"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YES\n"
-                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:background="#32CD32"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
                 android:paddingTop="10dp"
+                android:src="@drawable/correct"
 
 
                 />
@@ -101,18 +100,16 @@
 
                 />
 
-            <TextView
+            <ImageView
                 android:id="@+id/buet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YES\n"
-                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:background="#32CD32"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
                 android:paddingTop="10dp"
+                android:src="@drawable/correct"
 
 
                 />
@@ -137,18 +134,16 @@
 
                 />
 
-            <TextView
+            <ImageView
                 android:id="@+id/sust"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YES\n"
-                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:background="#32CD32"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
                 android:paddingTop="10dp"
+                android:src="@drawable/correct"
 
 
                 />
@@ -171,18 +166,16 @@
 
                 />
 
-            <TextView
+            <ImageView
                 android:id="@+id/ju"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YES\n"
-                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:background="#32CD32"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
                 android:paddingTop="10dp"
+                android:src="@drawable/correct"
 
 
                 />
@@ -205,18 +198,16 @@
 
                 />
 
-            <TextView
+            <ImageView
                 android:id="@+id/du"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YES\n"
-                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:background="#32CD32"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
                 android:paddingTop="10dp"
+                android:src="@drawable/correct"
 
 
                 />
@@ -239,19 +230,16 @@
 
 
                 />
-
-            <TextView
+            <ImageView
                 android:id="@+id/iut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YES\n"
-                android:textStyle="bold"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:background="#32CD32"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"
                 android:paddingTop="10dp"
+                android:src="@drawable/correct"
 
 
                 />
