@@ -3,6 +3,7 @@ package com.example.admissionhub;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -33,6 +34,9 @@ public class universities extends AppCompatActivity implements View.OnClickListe
 
         iut = (TextView) findViewById(R.id.iut);
         iut.setOnClickListener(this);
+
+
+
     }
 
     @Override
@@ -40,33 +44,43 @@ public class universities extends AppCompatActivity implements View.OnClickListe
 
         if(v.getId() == R.id.buet)
         {
+
+
             Intent intent = new Intent(universities.this,Buet.class);
             startActivity(intent);
+
+
         }
         if(v.getId() == R.id.du)
         {
+
             Intent intent = new Intent(universities.this,DU.class);
             startActivity(intent);
         }
         if(v.getId() == R.id.sust)
         {
+
             Intent intent = new Intent(universities.this,Sust.class);
             startActivity(intent);
         }
         if(v.getId() == R.id.ju)
         {
+
             Intent intent = new Intent(universities.this,JU.class);
             startActivity(intent);
         }
         if(v.getId() == R.id.aust)
         {
+
             Intent intent = new Intent(universities.this,AUST.class);
             startActivity(intent);
         }
         if(v.getId() == R.id.iut)
         {
+
             Intent intent = new Intent(universities.this,IUT.class);
             startActivity(intent);
         }
     }
+
 }
