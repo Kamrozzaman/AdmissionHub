@@ -25,7 +25,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
     String password,usrname;
     Button loginButton;
-    private DatabaseReference ref;
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
         getSupportActionBar().hide();
 
-        ref = FirebaseDatabase.getInstance().getReference().child("USERINFO");
+        reference = FirebaseDatabase.getInstance().getReference().child("USERINFO");
 
         signup = (TextView) findViewById(R.id.signup);
         signup.setOnClickListener(this);
@@ -77,9 +77,11 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
             else{
 
-            ref.addValueEventListener(new ValueEventListener() {
 
-                int e = 0;
+
+            reference.addValueEventListener(new ValueEventListener() {
+
+               boolean check = false;
 
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -101,7 +103,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
                             startActivity(intent);
                             User.setText(null);
                             Password.setText(null);
-                            e = 1;
+                            check = true;
                             break;
 
 
@@ -110,7 +112,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
                     }
 
-                    if (e == 0) {
+                    if (check == false) {
                         Toast.makeText(logSign.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
                     }
 
