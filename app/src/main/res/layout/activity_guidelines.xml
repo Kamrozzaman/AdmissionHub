@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".guidelines">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guidelines"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#5442f5"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You must solve previous years question bank for better understandings and preparation."
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The followings are some important guidelines for your admission test.Best of luck!"
+        android:textColor="@color/colorPrimary"
+        android:paddingTop="15dp"
+        android:textSize="18dp"/>
+
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/guidelinesExpandableListViewId"
+        >
+
+    </ExpandableListView>
+
+</LinearLayout>

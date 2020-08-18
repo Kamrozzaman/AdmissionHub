@@ -88,7 +88,8 @@ public class dashboard extends AppCompatActivity {
                 }
                 else if(position==5)
                 {
-                    Toast.makeText(dashboard.this, "Guideline Clicked!", Toast.LENGTH_SHORT).show();
+                    Intent intt = new Intent(dashboard.this, guidelines.class);
+                    startActivity(intt);
                 }
                 else if(position==6)
                 {

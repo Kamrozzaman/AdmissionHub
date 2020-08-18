@@ -48,4 +48,63 @@
 
     </string-array>
 
+
+    <string name="guideline1">Guidelines for Mathematics</string>
+    <string name="guideline2">Guidelines for Physics</string>
+    <string name="guideline3">Guidelines for Chemistry</string>
+    <string name="guideline4">Guidelines for English</string>
+    <string name="guideline5">Guidelines for Bangla</string>
+
+
+    <string-array name="guideline1">
+
+        <item>Mathematics is the most important subject for admission test at any university.You must read the following chapters very carefully: </item>
+        <item>1. Matrix and Determinants </item>
+        <item>2. Vectors and Probability </item>
+        <item>3. Straight Lines and Circles </item>
+        <item>4. Differentiation and Integration </item>
+        <item>5. Trigonometry and Complex Number </item>
+
+    </string-array>
+
+    <string-array name="guideline2">
+
+        <item>Physics is the another most important subject for admission test at any university.You must read the following chapters very carefully: </item>
+        <item>1. Vectors and Dynamic </item>
+        <item>2. Newtonian Mechanics and Structural Properties of Matter </item>
+        <item>3. Periodic Motion,Wave,Gravitation and Ideal Gas </item>
+        <item>4. Thermodynamics,Statical Electricity and Current Electricity </item>
+        <item>5. Geometrical Optics,Semiconductor and Modern Physics </item>
+
+    </string-array>
+
+    <string-array name="guideline3">
+
+        <item>Chemistry also plays an important role for admission test at any university.You must read the following chapters very carefully: </item>
+        <item>1. Qualitative Chemistry and Chemical Changes </item>
+        <item>2. Periodic Properties and Chemical Bond </item>
+        <item>3. Organic Chemistry </item>
+        <item>4. Quantitative Chemistry and Electrochemistry </item>
+        <item>5. Environmental Chemistry </item>
+
+    </string-array>
+
+    <string-array name="guideline4">
+
+        <item>English is an important subject for admission test at some universities.You must read the following topics very carefully: </item>
+        <item>1. Vocabulary,Synonyms and Antonyms </item>
+        <item>2. Preposition,Idioms and Phrases </item>
+        <item>3. Grammatical Basics </item>
+
+    </string-array>
+
+    <string-array name="guideline5">
+
+        <item>Bangla is less important for admission tests as only a few universities includes Bangla in the exam syllabus.You must read the following topics carefully: </item>
+        <item>1. Grammatical Basics </item>
+        <item>2. Life history of some writers and poets  </item>
+        <item>For better Idea solve previous years question Banks </item>
+
+    </string-array>
+
 </resources>
