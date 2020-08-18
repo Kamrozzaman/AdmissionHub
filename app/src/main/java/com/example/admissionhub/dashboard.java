@@ -99,7 +99,10 @@ public class dashboard extends AppCompatActivity {
                 }
                 else if(position==7)
                 {
-                    Toast.makeText(dashboard.this, "About Clicked!", Toast.LENGTH_SHORT).show();
+                    Intent intt = new Intent(dashboard.this, about.class);
+
+                    startActivity(intt);
+
                 }
 
             }
