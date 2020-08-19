@@ -94,40 +94,49 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
         //Toast.makeText(this, pssword+" "+confirmpssword, Toast.LENGTH_SHORT).show();
 
+        boolean check = true;
         if (fllname.length() == 0) {
 
             fullname.setError("");
+            check=false;
         }
 
         if (usrname.length() == 0) {
             username.setError("");
+            check=false;
 
         }
 
         if (pssword.length() == 0) {
 
             password.setError("");
+            check=false;
         }
 
         if (confirmpssword.length() == 0) {
             confirmpassword.setError("");
+            check=false;
 
         }
 
         if (phn.length() == 0) {
             phone.setError("");
+            check=false;
         }
-
         if (ssgpa.length() == 0) {
             sscgpa.setError("");
+            check=false;
         }
 
         if (hsgpa.length() == 0) {
             hscgpa.setError("");
-        } else if (var != 0) {
+            check=false;
+        }
+        if (var != 0) {
             Toast.makeText(this, "password and confirm password does not match", Toast.LENGTH_SHORT).show();
-
-        } else {
+            check=false;
+        }
+        if(check==true){
 
             UserRegister();
 

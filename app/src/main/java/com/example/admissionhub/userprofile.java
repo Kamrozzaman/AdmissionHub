@@ -43,7 +43,7 @@ public class userprofile extends AppCompatActivity {
         hsgpa+=" (HSC)";
 
 
-            Toast.makeText(this, emal, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, emal, Toast.LENGTH_SHORT).show();
 
         fullname.setText(fllname);
         email.setText(emal);

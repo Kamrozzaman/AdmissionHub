@@ -93,10 +93,10 @@ public class dashboard extends AppCompatActivity {
                 }
                 else if(position==6)
                 {
-                    //Toast.makeText(dashboard.this, "Quiz Clicked!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(dashboard.this, logSign.class);
+                    Toast.makeText(dashboard.this, "Quiz Clicked!", Toast.LENGTH_SHORT).show();
+                    /*Intent intent = new Intent(dashboard.this, logSign.class);
 
-                    startActivity(intent);
+                    startActivity(intent);*/
                 }
                 else if(position==7)
                 {
