@@ -41,6 +41,8 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
         dr = FirebaseDatabase.getInstance().getReference("USERINFO");
 
+
+
         fullname = (EditText) findViewById(R.id.fullname);
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
@@ -234,5 +236,8 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         userInfo userinfo = new userInfo(fllname,usrname,pssword,phn,ssgpa,hsgpa,grp);
 
         dr.child(key).setValue(userinfo);
+
+
+
     }
 }

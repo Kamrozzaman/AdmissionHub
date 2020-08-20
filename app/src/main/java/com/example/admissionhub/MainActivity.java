@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void run() {
 
-                Intent one = new Intent(MainActivity.this,logSign.class);
+                Intent one = new Intent(MainActivity.this,adminORuser.class);
                 startActivity(one);
                 finish();
             }
