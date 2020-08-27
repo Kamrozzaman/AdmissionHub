@@ -7,10 +7,92 @@
     tools:context=".AdminDashboard">
 
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Admin Dashboard"
-        android:textSize="50dp"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/tvText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="40sp"
+                android:layout_marginTop="20dp"
+                android:text="ADMISSION HUB"
+                android:background="#78e66a"
+                android:textStyle="italic"
+                android:fontFamily="@font/custom1"
+                android:textColor="#3C3939"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/adminNoticesId"
+                    android:layout_width="150dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="220dp"
+                    android:src="@drawable/notices_icon"/>
+
+                <ImageView
+                    android:id="@+id/adminForumId"
+                    android:layout_width="150dp"
+                    android:layout_height="220dp"
+                    android:layout_marginLeft="55dp"
+                    android:src="@drawable/forum_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:id="@+id/adminAboutId"
+                    android:layout_width="150dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="220dp"
+                    android:src="@drawable/about_icon"/>
+
+                <ImageView
+                    android:id="@+id/adminLogoutId"
+                    android:layout_width="150dp"
+                    android:layout_height="220dp"
+                    android:layout_marginLeft="55dp"
+                    android:src="@drawable/logout_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All Rights Reserved by Team indomitables_[3]"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="20dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

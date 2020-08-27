@@ -2,8 +2,14 @@ package com.example.admissionhub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,10 +22,25 @@ public class guidelines extends AppCompatActivity {
     HashMap<String,List<String>> listItem;
     MainAdapter adapter;
 
+    FirebaseAuth mAuth;
+    String email,password,fllname,phn,grp,ssgpa,hsgpa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guidelines);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        email = getIntent().getStringExtra("EMAIL");
+        //Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
+        password = getIntent().getStringExtra("PASS");
+        fllname = getIntent().getStringExtra("FULLNAME");
+        phn = getIntent().getStringExtra("PHONE");
+        grp = getIntent().getStringExtra("GROUP");
+        //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
+        ssgpa = getIntent().getStringExtra("SSCGPA");
+        hsgpa = getIntent().getStringExtra("HSCGPA");
 
         expandableListView = findViewById(R.id.guidelinesExpandableListViewId);
         listGroup = new ArrayList<>();
@@ -79,5 +100,96 @@ public class guidelines extends AppCompatActivity {
         listItem.put(listGroup.get(3),list4);
         listItem.put(listGroup.get(4),list5);
         adapter.notifyDataSetChanged();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.nav_menu_layout,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        Intent intent;
+
+        if(item.getItemId()==R.id.dashboardMenuId)
+        {
+            Intent intt = new Intent(guidelines.this,dashboard.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
+            startActivity(intt);
+        }
+        else if(item.getItemId()==R.id.notificationMenuId)
+        {
+            Intent intt = new Intent(guidelines.this,Notifications.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
+            startActivity(intt);
+        }
+        else if(item.getItemId()==R.id.userStatusMenuId)
+        {
+            Intent intt = new Intent(guidelines.this,UserStatus.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
+            startActivity(intt);
+        }
+        else if(item.getItemId()==R.id.userProfileMenuId)
+        {
+            Intent intt = new Intent(guidelines.this,userprofile.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
+            startActivity(intt);
+        }
+        else if(item.getItemId()==R.id.changePasswordMenuId)
+        {
+            finish();
+            Intent intt = new Intent(guidelines.this,activity_change_password.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
+            startActivity(intt);
+        }
+        else if(item.getItemId()==R.id.LogOutMenuId)
+        {
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            intent = new Intent(getApplicationContext(),adminORuser.class);
+            startActivity(intent);
+        }
+        return false;
     }
 }

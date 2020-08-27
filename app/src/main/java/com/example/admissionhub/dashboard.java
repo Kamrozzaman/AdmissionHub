@@ -63,11 +63,25 @@ public class dashboard extends AppCompatActivity {
                 {
                     Intent intt = new Intent(dashboard.this, universities.class);
 
+                    intt.putExtra("EMAIL",email);
+                    intt.putExtra("PASS",password);
+                    intt.putExtra("FULLNAME",fllname);
+                    intt.putExtra("PHONE",phn);
+                    intt.putExtra("GROUP",grp);
+                    intt.putExtra("SSCGPA",ssgpa);
+                    intt.putExtra("HSCGPA",hsgpa);
+
                     startActivity(intt);
                 }
                 else if(position==1)
                 {
                     Intent intt = new Intent(dashboard.this, eligibility.class);
+
+                    intt.putExtra("EMAIL",email);
+                    intt.putExtra("PASS",password);
+                    intt.putExtra("FULLNAME",fllname);
+                    intt.putExtra("PHONE",phn);
+                    intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
 
@@ -75,32 +89,87 @@ public class dashboard extends AppCompatActivity {
                 }
                 else if(position==2)
                 {
-                    Toast.makeText(dashboard.this, "Notices Clicked!", Toast.LENGTH_SHORT).show();
+                    Intent intt = new Intent(dashboard.this, Notices.class);
+                    intt.putExtra("EMAIL",email);
+
+                    intt.putExtra("PASS",password);
+                    intt.putExtra("FULLNAME",fllname);
+                    intt.putExtra("PHONE",phn);
+
+                    intt.putExtra("GROUP",grp);
+                    intt.putExtra("SSCGPA",ssgpa);
+                    intt.putExtra("HSCGPA",hsgpa);
+
+                    startActivity(intt);
                 }
                 else if(position==3)
                 {
                     Intent intt = new Intent(dashboard.this, FAQ.class);
+
+                    intt.putExtra("EMAIL",email);
+                    intt.putExtra("PASS",password);
+                    intt.putExtra("FULLNAME",fllname);
+                    intt.putExtra("PHONE",phn);
+                    intt.putExtra("GROUP",grp);
+                    intt.putExtra("SSCGPA",ssgpa);
+                    intt.putExtra("HSCGPA",hsgpa);
+
                     startActivity(intt);
                 }
                 else if(position==4)
                 {
-                    Toast.makeText(dashboard.this, "Forum Clicked!", Toast.LENGTH_SHORT).show();
+                    Intent intt = new Intent(dashboard.this, Forum.class);
+                    intt.putExtra("EMAIL",email);
+
+                    intt.putExtra("PASS",password);
+                    intt.putExtra("FULLNAME",fllname);
+                    intt.putExtra("PHONE",phn);
+
+                    intt.putExtra("GROUP",grp);
+                    intt.putExtra("SSCGPA",ssgpa);
+                    intt.putExtra("HSCGPA",hsgpa);
+
+                    startActivity(intt);
                 }
                 else if(position==5)
                 {
                     Intent intt = new Intent(dashboard.this, guidelines.class);
+                    intt.putExtra("EMAIL",email);
+                    intt.putExtra("PASS",password);
+                    intt.putExtra("FULLNAME",fllname);
+                    intt.putExtra("PHONE",phn);
+                    intt.putExtra("GROUP",grp);
+                    intt.putExtra("SSCGPA",ssgpa);
+                    intt.putExtra("HSCGPA",hsgpa);
                     startActivity(intt);
                 }
                 else if(position==6)
                 {
-                    Toast.makeText(dashboard.this, "Quiz Clicked!", Toast.LENGTH_SHORT).show();
-                    /*Intent intent = new Intent(dashboard.this, logSign.class);
+                    Intent intt = new Intent(dashboard.this, Quiz.class);
+                    intt.putExtra("EMAIL",email);
 
-                    startActivity(intent);*/
+                    intt.putExtra("PASS",password);
+                    intt.putExtra("FULLNAME",fllname);
+                    intt.putExtra("PHONE",phn);
+
+                    intt.putExtra("GROUP",grp);
+                    intt.putExtra("SSCGPA",ssgpa);
+                    intt.putExtra("HSCGPA",hsgpa);
+
+                    startActivity(intt);
                 }
                 else if(position==7)
                 {
                     Intent intt = new Intent(dashboard.this, about.class);
+                    intt.putExtra("EMAIL",email);
+
+                    intt.putExtra("PASS",password);
+                    intt.putExtra("FULLNAME",fllname);
+                    intt.putExtra("PHONE",phn);
+
+                    intt.putExtra("GROUP",grp);
+                    intt.putExtra("SSCGPA",ssgpa);
+                    intt.putExtra("HSCGPA",hsgpa);
 
                     startActivity(intt);
 
@@ -122,15 +191,45 @@ public class dashboard extends AppCompatActivity {
 
         if(item.getItemId()==R.id.dashboardMenuId)
         {
-            Toast.makeText(dashboard.this, "DashBoard Clicked!", Toast.LENGTH_SHORT).show();
+            Intent intt = new Intent(dashboard.this,dashboard.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
+            startActivity(intt);
         }
         else if(item.getItemId()==R.id.notificationMenuId)
         {
-            Toast.makeText(dashboard.this, "Notification Clicked!", Toast.LENGTH_SHORT).show();
+            Intent intt = new Intent(dashboard.this,Notifications.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
+            startActivity(intt);
         }
         else if(item.getItemId()==R.id.userStatusMenuId)
         {
-            Toast.makeText(dashboard.this, "User Status Clicked!", Toast.LENGTH_SHORT).show();
+            Intent intt = new Intent(dashboard.this,UserStatus.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
+            startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
         {
@@ -150,13 +249,22 @@ public class dashboard extends AppCompatActivity {
         {
             finish();
             Intent intt = new Intent(dashboard.this,activity_change_password.class);
+            intt.putExtra("EMAIL",email);
+
+            intt.putExtra("PASS",password);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",ssgpa);
+            intt.putExtra("HSCGPA",hsgpa);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)
         {
             FirebaseAuth.getInstance().signOut();
             finish();
-            intent = new Intent(getApplicationContext(),logSign.class);
+            intent = new Intent(getApplicationContext(),adminORuser.class);
             startActivity(intent);
         }
         return false;

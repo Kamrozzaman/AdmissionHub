@@ -51,7 +51,7 @@
         <ImageView
             android:id="@+id/user"
             android:layout_width="150dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_height="200dp"
             android:src="@drawable/user"/>
 
@@ -59,7 +59,7 @@
             android:id="@+id/admin"
             android:layout_width="150dp"
             android:layout_height="205dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="50dp"
             android:src="@drawable/admin" />
 
 
@@ -76,14 +76,14 @@
             android:layout_height="wrap_content"
             android:text="User"
             android:textSize="40dp"
-            android:layout_marginLeft="40dp"/>
+            android:layout_marginLeft="65dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Admin"
             android:textSize="40dp"
-            android:layout_marginLeft="80dp"/>
+            android:layout_marginLeft="90dp"/>
 
 
     </LinearLayout>

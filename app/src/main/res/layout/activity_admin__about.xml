@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin_About">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="#237FC9"
+
+                android:layout_gravity="center"
+                android:text="          ABOUT          "
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:paddingTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#4d4840"
+                android:text="AdmissionHub is a small effort of ours to help the admission test takers.Here you can find information on various Universities and helpful guidelines for undergraduate admission.">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#4d4840"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:text="Key Features:">
+
+            </TextView>
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="250dp"
+                android:layout_toLeftOf="@id/or"
+                android:background="#000000"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/bullet"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#4d4840"
+                    android:text="Category wise University Information(Public,Private,International)"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/bullet"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#4d4840"
+                    android:text="Subjectwise Preparation Guideline  "/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/bullet"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#4d4840"
+                    android:text="Eligibility checking for taking admission in the Universities depending on students result"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/bullet"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#4d4840"
+                    android:text="Notification of important dates(application deadline,examination date)"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/bullet"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#4d4840"
+                    android:text="Notification of important dates(application deadline,examination date) according to his choice list"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/bullet"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="#4d4840"
+                    android:text="Interactive Forum 6.Frequently Asked Question(FAQ)"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:paddingTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#4d4840"
+                android:text="AdmissionHub is developed by team indomitables_[3]"/>
+
+
+            <TextView
+                android:paddingTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#4d4840"
+                android:text="Team members are : "/>
+
+            <ImageView
+                android:paddingTop="10dp"
+                android:layout_width = "200dp"
+                android:layout_height= "200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:src="@drawable/rahat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#4d4840"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:text="Rahat Chowdhury"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:textColor="#4d4840"
+                android:layout_gravity="center"
+                android:text="Industrious and Self-Confident"/>
+
+
+            <ImageView
+                android:paddingTop="10dp"
+                android:layout_width = "200dp"
+                android:layout_height= "200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:src="@drawable/rakib"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#4d4840"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:text="Rakibul Islam"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:textColor="#4d4840"
+                android:layout_gravity="center"
+                android:text="A Lifelong Learner and Bookworm"/>
+
+            <ImageView
+                android:paddingTop="10dp"
+                android:layout_width = "200dp"
+                android:layout_height= "200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:src="@drawable/kamru"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#4d4840"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:text="MD.Kamrozzaman Bhuiyan"/>
+
+
+            <TextView
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:textColor="#4d4840"
+                android:layout_gravity="center"
+                android:text="An Enthusiast and Determined"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

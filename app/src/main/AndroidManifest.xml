@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminSignup_temp"></activity>
+        <activity android:name=".UserStatus"></activity>
+        <activity android:name=".Notifications" />
+        <activity android:name=".Admin_About" />
+        <activity android:name=".Admin_Forum" />
+        <activity android:name=".Admin_Notices" />
+        <activity android:name=".Quiz" />
+        <activity android:name=".Forum" />
+        <activity android:name=".Notices" />
+        <activity android:name=".AdminSignup_temp" />
         <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminLogin" />
         <activity android:name=".adminORuser" />

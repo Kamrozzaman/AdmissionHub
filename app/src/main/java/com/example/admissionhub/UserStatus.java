@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class about extends AppCompatActivity {
+public class UserStatus extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     String email,password,fllname,phn,grp,ssgpa,hsgpa;
@@ -18,7 +18,7 @@ public class about extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_user_status);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -31,7 +31,6 @@ public class about extends AppCompatActivity {
         //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
-
     }
 
     public boolean onCreateOptionsMenu(Menu menu)
@@ -46,7 +45,7 @@ public class about extends AppCompatActivity {
 
         if(item.getItemId()==R.id.dashboardMenuId)
         {
-            Intent intt = new Intent(about.this,dashboard.class);
+            Intent intt = new Intent(UserStatus.this,dashboard.class);
             intt.putExtra("EMAIL",email);
 
             intt.putExtra("PASS",password);
@@ -60,7 +59,7 @@ public class about extends AppCompatActivity {
         }
         else if(item.getItemId()==R.id.notificationMenuId)
         {
-            Intent intt = new Intent(about.this,Notifications.class);
+            Intent intt = new Intent(UserStatus.this,Notifications.class);
             intt.putExtra("EMAIL",email);
 
             intt.putExtra("PASS",password);
@@ -74,7 +73,7 @@ public class about extends AppCompatActivity {
         }
         else if(item.getItemId()==R.id.userStatusMenuId)
         {
-            Intent intt = new Intent(about.this,UserStatus.class);
+            Intent intt = new Intent(UserStatus.this,UserStatus.class);
             intt.putExtra("EMAIL",email);
 
             intt.putExtra("PASS",password);
@@ -88,7 +87,7 @@ public class about extends AppCompatActivity {
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
         {
-            Intent intt = new Intent(about.this,userprofile.class);
+            Intent intt = new Intent(UserStatus.this,userprofile.class);
             intt.putExtra("EMAIL",email);
 
             intt.putExtra("PASS",password);
@@ -103,7 +102,7 @@ public class about extends AppCompatActivity {
         else if(item.getItemId()==R.id.changePasswordMenuId)
         {
             finish();
-            Intent intt = new Intent(about.this,activity_change_password.class);
+            Intent intt = new Intent(UserStatus.this,activity_change_password.class);
             intt.putExtra("EMAIL",email);
 
             intt.putExtra("PASS",password);
