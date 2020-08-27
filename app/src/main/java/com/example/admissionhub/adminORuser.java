@@ -33,7 +33,7 @@ public class adminORuser extends AppCompatActivity implements View.OnClickListen
         }
         if(v.getId()==R.id.admin)
         {
-            Intent intent = new Intent(adminORuser.this,AdminLogin.class);
+            Intent intent = new Intent(adminORuser.this , AdminLogin.class);
             startActivity(intent);
         }
 
