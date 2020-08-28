@@ -12,19 +12,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class logSign extends AppCompatActivity implements View.OnClickListener{
 
+    private FirebaseAuth authenticate;
     TextView signup,forgotpassword;
     EditText User , Password;
 
     String password,usrname;
     Button loginButton;
+
     private DatabaseReference reference;
 
     @Override
@@ -41,6 +48,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
 
         User = findViewById(R.id.username);
         Password = findViewById(R.id.password);
+        authenticate= FirebaseAuth.getInstance();
 
         forgotpassword = (TextView) findViewById(R.id.forgotpassword);
         forgotpassword.setOnClickListener(this);
@@ -78,53 +86,62 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
             else{
 
 
+                authenticate.signInWithEmailAndPassword(usrname, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            reference.addValueEventListener(new ValueEventListener() {
 
-            reference.addValueEventListener(new ValueEventListener() {
+                                boolean check = false;
 
-               boolean check = false;
-
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        userInfo userinfo = dataSnapshot1.getValue(userInfo.class);
+                                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                                        userInfo userinfo = dataSnapshot1.getValue(userInfo.class);
 
-                        if (usrname.equals(userinfo.getUsrname()) && password.equals(userinfo.getPssword())) {
+                                        if (usrname.equals(userinfo.getUsrname()) ) {
 
-                            Intent intent = new Intent(logSign.this, dashboard.class);
-                            intent.putExtra("EMAIL",usrname);
-                            intent.putExtra("PASS",password);
-                            intent.putExtra("FULLNAME",userinfo.getFllname());
-                            intent.putExtra("PHONE",userinfo.getPhn());
-                            intent.putExtra("GROUP",userinfo.getGrp());
-                            intent.putExtra("SSCGPA",userinfo.getSsgpa());
-                            intent.putExtra("HSCGPA",userinfo.getHsgpa());
+                                            Intent intent = new Intent(logSign.this, dashboard.class);
+                                            intent.putExtra("EMAIL",usrname);
+                                            intent.putExtra("PASS",password);
+                                            intent.putExtra("FULLNAME",userinfo.getFllname());
+                                            intent.putExtra("PHONE",userinfo.getPhn());
+                                            intent.putExtra("GROUP",userinfo.getGrp());
+                                            intent.putExtra("SSCGPA",userinfo.getSsgpa());
+                                            intent.putExtra("HSCGPA",userinfo.getHsgpa());
 
-                            startActivity(intent);
-                            User.setText(null);
-                            Password.setText(null);
-                            check = true;
-                            break;
+                                            startActivity(intent);
+                                            break;
 
+
+                                        }
+
+
+                                    }
+
+
+                                }
+
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
 
                         }
 
+                        else{
+                            Toast.makeText(logSign.this,"Loggin Failed",Toast.LENGTH_SHORT).show();
+                        }
 
                     }
-
-                    if (check == false) {
-                        Toast.makeText(logSign.this, "Wrong username or password", Toast.LENGTH_SHORT).show();
-                    }
+                });
 
 
-                }
 
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
 
 
         }
