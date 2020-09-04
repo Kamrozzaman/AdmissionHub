@@ -1,6 +1,6 @@
 package com.example.admissionhub;
 
-import androidx.annotation.NonNull;
+/*import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,11 +22,65 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.ValueEventListener;*/
 
-public class activity_change_password extends AppCompatActivity implements View.OnClickListener {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-    String email,password,fllname,phn,grp,ssgpa,hsgpa;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+
+
+public class activity_change_password extends AppCompatActivity  {
+
+    Button bt;
+    EditText em;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_change_password);
+
+        bt = findViewById(R.id.cbutton);
+        em= findViewById(R.id.cemail);
+
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String email = em.getText().toString();
+                if(email.length()==0){
+                    em.setError("");
+                    return;
+                }
+
+                FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        if(task.isSuccessful()){
+                            Toast.makeText(activity_change_password.this , "Please check your email" , Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(activity_change_password.this, logSign.class);
+                            startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(activity_change_password.this , "Enter Correct Email", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    /*String email,password,fllname,phn,grp,ssgpa,hsgpa;
 
     EditText old_pass, new_pass, confirm_pass;
     Button change_password_button;
@@ -48,8 +102,7 @@ public class activity_change_password extends AppCompatActivity implements View.
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
 
-        old_pass = (EditText) findViewById(R.id.change_password_old);
-        new_pass = (EditText) findViewById(R.id.change_password_new);
+
         confirm_pass = (EditText) findViewById(R.id.change_password_confirm);
 
         change_password_button = (Button) findViewById(R.id.change_password_button);
@@ -129,7 +182,7 @@ public class activity_change_password extends AppCompatActivity implements View.
        else
        {
            Toast.makeText(getApplicationContext(),"Please fill all the fields",Toast.LENGTH_SHORT).show();
-       }*/
+       }
     }
 
     @Override
@@ -228,6 +281,6 @@ public class activity_change_password extends AppCompatActivity implements View.
             startActivity(intent);
         }
         return false;
-    }
+    }*/
 }
 
