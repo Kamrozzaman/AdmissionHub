@@ -17,7 +17,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
 
     TextView buet,du,ju,sust,aust,iut;
     FirebaseAuth mAuth;
-    String email,password,fllname,phn,grp,ssgpa,hsgpa;
+    String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
         //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
+        usrId = getIntent().getStringExtra("USERID");
 
         buet = (TextView) findViewById(R.id.buet);
         buet.setOnClickListener(this);
@@ -73,6 +74,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         if(v.getId() == R.id.du)
@@ -88,6 +90,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         if(v.getId() == R.id.sust)
@@ -103,6 +106,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         if(v.getId() == R.id.ju)
@@ -118,6 +122,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         if(v.getId() == R.id.aust)
@@ -133,6 +138,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         if(v.getId() == R.id.iut)
@@ -148,6 +154,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
     }
@@ -174,34 +181,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.notificationMenuId)
-        {
-            Intent intt = new Intent(universities.this,Notifications.class);
-            intt.putExtra("EMAIL",email);
-
-            intt.putExtra("PASS",password);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",ssgpa);
-            intt.putExtra("HSCGPA",hsgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.userStatusMenuId)
-        {
-            Intent intt = new Intent(universities.this,UserStatus.class);
-            intt.putExtra("EMAIL",email);
-
-            intt.putExtra("PASS",password);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",ssgpa);
-            intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
@@ -216,6 +196,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
@@ -231,6 +212,7 @@ public class universities extends AppCompatActivity implements View.OnClickListe
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)

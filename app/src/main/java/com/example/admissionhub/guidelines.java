@@ -23,7 +23,7 @@ public class guidelines extends AppCompatActivity {
     MainAdapter adapter;
 
     FirebaseAuth mAuth;
-    String email,password,fllname,phn,grp,ssgpa,hsgpa;
+    String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class guidelines extends AppCompatActivity {
         //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
+        usrId = getIntent().getStringExtra("USERID");
 
         expandableListView = findViewById(R.id.guidelinesExpandableListViewId);
         listGroup = new ArrayList<>();
@@ -124,34 +125,7 @@ public class guidelines extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.notificationMenuId)
-        {
-            Intent intt = new Intent(guidelines.this,Notifications.class);
-            intt.putExtra("EMAIL",email);
-
-            intt.putExtra("PASS",password);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",ssgpa);
-            intt.putExtra("HSCGPA",hsgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.userStatusMenuId)
-        {
-            Intent intt = new Intent(guidelines.this,UserStatus.class);
-            intt.putExtra("EMAIL",email);
-
-            intt.putExtra("PASS",password);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",ssgpa);
-            intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
@@ -166,6 +140,7 @@ public class guidelines extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
@@ -181,6 +156,7 @@ public class guidelines extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)

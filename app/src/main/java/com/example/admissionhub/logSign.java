@@ -110,6 +110,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
                                             intent.putExtra("GROUP",userinfo.getGrp());
                                             intent.putExtra("SSCGPA",userinfo.getSsgpa());
                                             intent.putExtra("HSCGPA",userinfo.getHsgpa());
+                                            intent.putExtra("USERID",userinfo.getUSERID());
 
                                             startActivity(intent);
                                             break;
@@ -133,7 +134,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
                         }
 
                         else{
-                            Toast.makeText(logSign.this,"Loggin Failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(logSign.this,"Login Failed",Toast.LENGTH_SHORT).show();
                         }
 
                     }

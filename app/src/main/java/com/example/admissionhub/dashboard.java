@@ -23,11 +23,11 @@ public class dashboard extends AppCompatActivity {
     DrawerLayout drawerLayout;
 
     private GridView dashboardGridView;
-    int[] flags={R.drawable.universities_icon,R.drawable.eligibility_icon,R.drawable.notices_icon,R.drawable.faq_icon,R.drawable.forum_icon,R.drawable.guideline_icon,
+    int[] flags={R.drawable.universities_icon,R.drawable.eligibility_icon,R.drawable.notices_icon,R.drawable.faq_icon,R.drawable.userstatus_icon,R.drawable.guideline_icon,
             R.drawable.quiz_icon,R.drawable.about_icon};
 
     FirebaseAuth mAuth;
-    String email,password,fllname,phn,grp,ssgpa,hsgpa;
+    String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +44,7 @@ public class dashboard extends AppCompatActivity {
         //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
-
+        usrId = getIntent().getStringExtra("USERID");
 
 
 
@@ -70,7 +70,7 @@ public class dashboard extends AppCompatActivity {
                     intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
-
+                    intt.putExtra("USERID",usrId);
                     startActivity(intt);
                 }
                 else if(position==1)
@@ -84,7 +84,7 @@ public class dashboard extends AppCompatActivity {
                     intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
-
+                    intt.putExtra("USERID",usrId);
                     startActivity(intt);
                 }
                 else if(position==2)
@@ -99,7 +99,7 @@ public class dashboard extends AppCompatActivity {
                     intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
-
+                    intt.putExtra("USERID",usrId);
                     startActivity(intt);
                 }
                 else if(position==3)
@@ -113,12 +113,12 @@ public class dashboard extends AppCompatActivity {
                     intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
-
+                    intt.putExtra("USERID",usrId);
                     startActivity(intt);
                 }
                 else if(position==4)
                 {
-                    Intent intt = new Intent(dashboard.this, Forum.class);
+                    Intent intt = new Intent(dashboard.this, UserStatus.class);
                     intt.putExtra("EMAIL",email);
 
                     intt.putExtra("PASS",password);
@@ -128,7 +128,7 @@ public class dashboard extends AppCompatActivity {
                     intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
-
+                    intt.putExtra("USERID",usrId);
                     startActivity(intt);
                 }
                 else if(position==5)
@@ -141,6 +141,7 @@ public class dashboard extends AppCompatActivity {
                     intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
+                    intt.putExtra("USERID",usrId);
                     startActivity(intt);
                 }
                 else if(position==6)
@@ -155,7 +156,7 @@ public class dashboard extends AppCompatActivity {
                     intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
-
+                    intt.putExtra("USERID",usrId);
                     startActivity(intt);
                 }
                 else if(position==7)
@@ -170,7 +171,7 @@ public class dashboard extends AppCompatActivity {
                     intt.putExtra("GROUP",grp);
                     intt.putExtra("SSCGPA",ssgpa);
                     intt.putExtra("HSCGPA",hsgpa);
-
+                    intt.putExtra("USERID",usrId);
                     startActivity(intt);
 
                 }
@@ -201,34 +202,7 @@ public class dashboard extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.notificationMenuId)
-        {
-            Intent intt = new Intent(dashboard.this,Notifications.class);
-            intt.putExtra("EMAIL",email);
-
-            intt.putExtra("PASS",password);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",ssgpa);
-            intt.putExtra("HSCGPA",hsgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.userStatusMenuId)
-        {
-            Intent intt = new Intent(dashboard.this,UserStatus.class);
-            intt.putExtra("EMAIL",email);
-
-            intt.putExtra("PASS",password);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",ssgpa);
-            intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
@@ -243,6 +217,7 @@ public class dashboard extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
@@ -258,6 +233,7 @@ public class dashboard extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)

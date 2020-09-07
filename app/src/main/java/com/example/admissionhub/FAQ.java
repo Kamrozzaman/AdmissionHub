@@ -23,7 +23,7 @@ public class FAQ extends AppCompatActivity {
     MainAdapter adapter;
 
     FirebaseAuth mAuth;
-    String email,password,fllname,phn,grp,ssgpa,hsgpa;
+    String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
 
 
     @Override
@@ -42,6 +42,7 @@ public class FAQ extends AppCompatActivity {
         //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
+        usrId = getIntent().getStringExtra("USERID");
 
         expandableListView = findViewById(R.id.expandableListViewId);
         listGroup = new ArrayList<>();
@@ -125,34 +126,7 @@ public class FAQ extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.notificationMenuId)
-        {
-            Intent intt = new Intent(FAQ.this,Notifications.class);
-            intt.putExtra("EMAIL",email);
-
-            intt.putExtra("PASS",password);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",ssgpa);
-            intt.putExtra("HSCGPA",hsgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.userStatusMenuId)
-        {
-            Intent intt = new Intent(FAQ.this,UserStatus.class);
-            intt.putExtra("EMAIL",email);
-
-            intt.putExtra("PASS",password);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",ssgpa);
-            intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
@@ -167,6 +141,7 @@ public class FAQ extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
@@ -182,6 +157,7 @@ public class FAQ extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)

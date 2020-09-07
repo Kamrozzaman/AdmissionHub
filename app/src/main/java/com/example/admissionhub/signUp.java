@@ -233,7 +233,7 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
         //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
         String key = dr.push().getKey();
-        userInfo userinfo = new userInfo(fllname,usrname,pssword,phn,ssgpa,hsgpa,grp);
+        userInfo userinfo = new userInfo(fllname,usrname,pssword,phn,ssgpa,hsgpa,grp,key);
 
         dr.child(key).setValue(userinfo);
 

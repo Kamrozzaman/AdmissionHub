@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,12 +18,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-public class userprofile extends AppCompatActivity {
+public class userprofile extends AppCompatActivity implements View.OnClickListener{
 
 
     FirebaseAuth mAuth;
+    Button updateInfoButton;
 
-    String emal,pssword,fllname,phn,grp,ssgpa,hsgpa,sgpa,hgpa;
+    String emal,pssword,fllname,phn,grp,ssgpa,hsgpa,sgpa,hgpa,usrId;
     TextView fullname,email,phone,group,sscgpa,hscgpa;
     private DatabaseReference ref;
     @Override
@@ -31,6 +34,9 @@ public class userprofile extends AppCompatActivity {
 
         FirebaseAuth mAuth;
 
+        updateInfoButton = (Button) findViewById(R.id.updateDataButtonId);
+        updateInfoButton.setOnClickListener(this);
+
         emal = getIntent().getStringExtra("EMAIL");
         //Toast.makeText(this, emal, Toast.LENGTH_SHORT).show();
         pssword = getIntent().getStringExtra("PASS");
@@ -39,6 +45,7 @@ public class userprofile extends AppCompatActivity {
         grp = getIntent().getStringExtra("GROUP");
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
+        usrId = getIntent().getStringExtra("USERID");
 
         sgpa=ssgpa;
         hgpa=hsgpa;
@@ -90,34 +97,7 @@ public class userprofile extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",sgpa);
             intt.putExtra("HSCGPA",hgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.notificationMenuId)
-        {
-            Intent intt = new Intent(userprofile.this,Notifications.class);
-            intt.putExtra("EMAIL",emal);
-
-            intt.putExtra("PASS",pssword);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",sgpa);
-            intt.putExtra("HSCGPA",hgpa);
-            startActivity(intt);
-        }
-        else if(item.getItemId()==R.id.userStatusMenuId)
-        {
-            Intent intt = new Intent(userprofile.this,UserStatus.class);
-            intt.putExtra("EMAIL",emal);
-
-            intt.putExtra("PASS",pssword);
-            intt.putExtra("FULLNAME",fllname);
-            intt.putExtra("PHONE",phn);
-
-            intt.putExtra("GROUP",grp);
-            intt.putExtra("SSCGPA",sgpa);
-            intt.putExtra("HSCGPA",hgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
@@ -132,6 +112,7 @@ public class userprofile extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",sgpa);
             intt.putExtra("HSCGPA",hgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
@@ -147,6 +128,7 @@ public class userprofile extends AppCompatActivity {
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",sgpa);
             intt.putExtra("HSCGPA",hgpa);
+            intt.putExtra("USERID",usrId);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)
@@ -157,5 +139,23 @@ public class userprofile extends AppCompatActivity {
             startActivity(intent);
         }
         return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.updateDataButtonId) {
+            Intent intt = new Intent(userprofile.this, updateData.class);
+            intt.putExtra("EMAIL",emal);
+
+            intt.putExtra("PASS",pssword);
+            intt.putExtra("FULLNAME",fllname);
+            intt.putExtra("PHONE",phn);
+
+            intt.putExtra("GROUP",grp);
+            intt.putExtra("SSCGPA",sgpa);
+            intt.putExtra("HSCGPA",hgpa);
+            intt.putExtra("USERID",usrId);
+            startActivity(intt);
+        }
     }
 }
