@@ -182,7 +182,7 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
 
     private boolean isDataChanged()
     {
-        boolean check = true;
+        boolean check = false;
         String name= fullname.getText().toString();
         String mob=  phone.getText().toString();
         String gpa1= sscgpa.getText().toString();
@@ -197,6 +197,7 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             else {
                 reference.child(usrId).child("fllname").setValue(fullname.getText().toString());
                 fllname = fullname.getText().toString();
+                check=true;
             }
         }
         if(!phn.equals(phone.getText().toString()))
@@ -210,6 +211,7 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             {
                 reference.child(usrId).child("phn").setValue(phone.getText().toString());
                 phn=phone.getText().toString();
+                check=true;
             }
         }
         if(!ssgpa.equals(sscgpa.getText().toString()))
@@ -223,6 +225,7 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             {
                 reference.child(usrId).child("ssgpa").setValue(sscgpa.getText().toString());
                 ssgpa=sscgpa.getText().toString();
+                check=true;
             }
         }
         if(!hsgpa.equals(hscgpa.getText().toString()))
@@ -236,6 +239,7 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             {
                 reference.child(usrId).child("hsgpa").setValue(hscgpa.getText().toString());
                 hsgpa=hscgpa.getText().toString();
+                check=true;
             }
         }
         return check;
