@@ -11,6 +11,17 @@
 
     </string-array>
 
+    <string-array name="University_names">
+
+        <item>Ahsanullah University of Science and Technology</item>
+        <item>Bangladesh University of Engineering and Technology</item>
+        <item>Shahjalal University of Science and Technology</item>
+        <item>Islamic University of Technology</item>
+        <item>University of Dhaka</item>
+        <item>Jahangirnagar University</item>
+
+    </string-array>
+
     <string name="group1">FAQ:1 What are the minimum qualifications of Undergraduate admission?</string>
     <string name="group2">FAQ:2 Can I apply for Undergraduate program if I appeared in HSC?</string>
     <string name="group3">FAQ:3 From where I can collect admission form?</string>

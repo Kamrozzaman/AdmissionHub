@@ -4,12 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin_Forum">
+    android:orientation="vertical"
+    tools:context=".updateData">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Admin Forum"
-        android:textSize="50dp"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="University Data"
+                android:textSize="30dp"
+                android:textStyle="italic"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"/>
+
+            <Spinner
+                android:id="@+id/universityname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/rounded_edittext"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+
+            <EditText
+                android:id="@+id/appstart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+
+                android:background="@drawable/rounded_edittext"
+                android:hint="Starting date of Application (dd/mm/yyyy)"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/append"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+
+                android:background="@drawable/rounded_edittext"
+                android:hint="Deadline of Application (dd/mm/yyyy)"
+                android:inputType="text"/>
+
+
+
+            <EditText
+                android:id="@+id/exam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+
+                android:background="@drawable/rounded_edittext"
+                android:hint="Date of the examination (dd/mm/yyyy)"
+                android:inputType="text"/>
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/rounded_button"
+                android:text="Update Data"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                />
+
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
