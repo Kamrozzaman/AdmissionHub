@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 public class updateData extends AppCompatActivity implements View.OnClickListener{
 
     FirebaseAuth mAuth;
-    DataSnapshot dataSnapshot;
+   // DataSnapshot dataSnapshot;
     String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
     String austt,juu,iutt,buett,sustt,duu,quiz_marks;
     Button updateDataButton;
@@ -67,7 +67,7 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
         sscgpa = findViewById(R.id.sscgpaId);
         hscgpa =  findViewById(R.id.hscgpaId);
 
-        reference.addValueEventListener(new ValueEventListener() {
+       /* reference.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     userInfo userinfo = dataSnapshot1.getValue(userInfo.class);
@@ -81,7 +81,7 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
 
         // Toast.makeText(this, emal, Toast.LENGTH_SHORT).show();
