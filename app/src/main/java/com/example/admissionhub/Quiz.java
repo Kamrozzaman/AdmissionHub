@@ -206,10 +206,34 @@ public class Quiz extends AppCompatActivity implements View.OnClickListener{
         String str = Integer.toString(curMark);
         //Toast.makeText(this,"Obtained Mark: "+str,Toast.LENGTH_SHORT).show();
 
-        reference.child(usrId).child("quiz_marks").setValue(str);
+        //reference.child(usrId).child("quiz_marks").setValue(str);
         quiz_marks=str;
 
-        EditText curmarkEditText,prevMarkEditText;
+        Intent intt = new Intent(Quiz.this , popup_quiz.class);
+
+        intt.putExtra("EMAIL",email);
+
+        intt.putExtra("PASS",password);
+        intt.putExtra("FULLNAME",fllname);
+        intt.putExtra("PHONE",phn);
+
+        intt.putExtra("GROUP",grp);
+        intt.putExtra("SSCGPA",ssgpa);
+        intt.putExtra("HSCGPA",hsgpa);
+        intt.putExtra("USERID",usrId);
+
+        intt.putExtra("AUST",austt);
+        intt.putExtra("DU",duu);
+        intt.putExtra("JU",juu);
+        intt.putExtra("BUET",buett);
+        intt.putExtra("QUIZ_MARKS",quiz_marks);
+        intt.putExtra("SUST",sustt);
+        intt.putExtra("IUT",iutt);
+        intt.putExtra("PQUIZ",prevMark);
+
+        startActivity(intt);
+
+        /*EditText curmarkEditText,prevMarkEditText;
         TextView congratulationTextView,tryAgainTextView;
         Button OkButton;
 
@@ -260,6 +284,6 @@ public class Quiz extends AppCompatActivity implements View.OnClickListener{
                 startActivity(intt);
             }
         });
-        myDialog.show();
+        myDialog.show();*/
     }
 }
