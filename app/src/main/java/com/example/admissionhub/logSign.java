@@ -111,6 +111,13 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
                                             intent.putExtra("SSCGPA",userinfo.getSsgpa());
                                             intent.putExtra("HSCGPA",userinfo.getHsgpa());
                                             intent.putExtra("USERID",userinfo.getUSERID());
+                                            intent.putExtra("AUST",userinfo.getAust());
+                                            intent.putExtra("DU",userinfo.getDu());
+                                            intent.putExtra("JU",userinfo.getJu());
+                                            intent.putExtra("BUET",userinfo.getBuet());
+                                            intent.putExtra("QUIZ_MARKS",userinfo.getQuiz_marks());
+                                            intent.putExtra("SUST",userinfo.getSust());
+                                            intent.putExtra("IUT",userinfo.getIut());
 
                                             startActivity(intent);
                                             break;

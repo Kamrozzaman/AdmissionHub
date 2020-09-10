@@ -24,6 +24,7 @@ public class FAQ extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
+    String austt,juu,iutt,buett,sustt,duu,quiz_marks;
 
 
     @Override
@@ -43,6 +44,13 @@ public class FAQ extends AppCompatActivity {
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
         usrId = getIntent().getStringExtra("USERID");
+        austt= getIntent().getStringExtra("AUST");
+        duu = getIntent() .getStringExtra("DU");
+        juu = getIntent().getStringExtra("JU");
+        sustt = getIntent().getStringExtra("SUST");
+        iutt = getIntent().getStringExtra("IUT");
+        buett = getIntent().getStringExtra("BUET");
+        quiz_marks =getIntent().getStringExtra("QUIZ_MARKS");
 
         expandableListView = findViewById(R.id.expandableListViewId);
         listGroup = new ArrayList<>();
@@ -127,6 +135,13 @@ public class FAQ extends AppCompatActivity {
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
             intt.putExtra("USERID",usrId);
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
@@ -142,6 +157,13 @@ public class FAQ extends AppCompatActivity {
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
             intt.putExtra("USERID",usrId);
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
@@ -158,6 +180,13 @@ public class FAQ extends AppCompatActivity {
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
             intt.putExtra("USERID",usrId);
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)

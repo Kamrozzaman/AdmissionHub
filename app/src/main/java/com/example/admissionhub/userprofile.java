@@ -26,6 +26,7 @@ public class userprofile extends AppCompatActivity implements View.OnClickListen
 
     String emal,pssword,fllname,phn,grp,ssgpa,hsgpa,sgpa,hgpa,usrId;
     TextView fullname,email,phone,group,sscgpa,hscgpa;
+    String austt,juu,iutt,buett,sustt,duu,quiz_marks;
     private DatabaseReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,14 @@ public class userprofile extends AppCompatActivity implements View.OnClickListen
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
         usrId = getIntent().getStringExtra("USERID");
+
+        austt= getIntent().getStringExtra("AUST");
+        duu = getIntent() .getStringExtra("DU");
+        juu = getIntent().getStringExtra("JU");
+        sustt = getIntent().getStringExtra("SUST");
+        iutt = getIntent().getStringExtra("IUT");
+        buett = getIntent().getStringExtra("BUET");
+        quiz_marks =getIntent().getStringExtra("QUIZ_MARKS");
 
         sgpa=ssgpa;
         hgpa=hsgpa;
@@ -98,6 +107,13 @@ public class userprofile extends AppCompatActivity implements View.OnClickListen
             intt.putExtra("SSCGPA",sgpa);
             intt.putExtra("HSCGPA",hgpa);
             intt.putExtra("USERID",usrId);
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
@@ -113,6 +129,14 @@ public class userprofile extends AppCompatActivity implements View.OnClickListen
             intt.putExtra("SSCGPA",sgpa);
             intt.putExtra("HSCGPA",hgpa);
             intt.putExtra("USERID",usrId);
+
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
@@ -129,6 +153,14 @@ public class userprofile extends AppCompatActivity implements View.OnClickListen
             intt.putExtra("SSCGPA",sgpa);
             intt.putExtra("HSCGPA",hgpa);
             intt.putExtra("USERID",usrId);
+
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)
@@ -155,6 +187,14 @@ public class userprofile extends AppCompatActivity implements View.OnClickListen
             intt.putExtra("SSCGPA",sgpa);
             intt.putExtra("HSCGPA",hgpa);
             intt.putExtra("USERID",usrId);
+
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
     }

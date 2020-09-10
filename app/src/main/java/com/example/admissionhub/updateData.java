@@ -27,6 +27,7 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
     FirebaseAuth mAuth;
     DataSnapshot dataSnapshot;
     String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
+    String austt,juu,iutt,buett,sustt,duu,quiz_marks;
     Button updateDataButton;
     EditText fullname,phone,sscgpa,hscgpa;
     DatabaseReference reference;
@@ -51,6 +52,14 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
         ssgpa = getIntent().getStringExtra("SSCGPA");
         hsgpa = getIntent().getStringExtra("HSCGPA");
         usrId = getIntent().getStringExtra("USERID");
+
+        austt= getIntent().getStringExtra("AUST");
+        duu = getIntent() .getStringExtra("DU");
+        juu = getIntent().getStringExtra("JU");
+        sustt = getIntent().getStringExtra("SUST");
+        iutt = getIntent().getStringExtra("IUT");
+        buett = getIntent().getStringExtra("BUET");
+        quiz_marks =getIntent().getStringExtra("QUIZ_MARKS");
 
 
         fullname = findViewById(R.id.fullNameId);
@@ -106,6 +115,13 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
             intt.putExtra("USERID",usrId);
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.userProfileMenuId)
@@ -121,6 +137,13 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
             intt.putExtra("USERID",usrId);
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.changePasswordMenuId)
@@ -137,6 +160,13 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
             intt.putExtra("USERID",usrId);
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else if(item.getItemId()==R.id.LogOutMenuId)
@@ -172,6 +202,13 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             intt.putExtra("GROUP",grp);
             intt.putExtra("SSCGPA",ssgpa);
             intt.putExtra("HSCGPA",hsgpa);
+            intt.putExtra("AUST",austt);
+            intt.putExtra("DU",duu);
+            intt.putExtra("JU",juu);
+            intt.putExtra("BUET",buett);
+            intt.putExtra("QUIZ_MARKS",quiz_marks);
+            intt.putExtra("SUST",sustt);
+            intt.putExtra("IUT",iutt);
             startActivity(intt);
         }
         else
@@ -225,7 +262,43 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
             {
                 reference.child(usrId).child("ssgpa").setValue(sscgpa.getText().toString());
                 ssgpa=sscgpa.getText().toString();
+
                 check=true;
+
+                double d=Double.parseDouble(ssgpa);
+                double a=Double.parseDouble(hsgpa);
+
+                a=a+d;
+
+                if(a<10.0){
+                    if(austt.length()==2){
+                        reference.child(usrId).child("aust").setValue("0");
+                        austt="0";
+                    }
+
+                    if(buett.length()==2){
+                        reference.child(usrId).child("buet").setValue("0");
+                        buett="0";
+                    }
+
+                    if(iutt.length()==2){
+                        reference.child(usrId).child("iut").setValue("0");
+                        iutt ="0";
+
+                    }
+                }
+
+                if(a<9.0){
+                    if(sustt.length()==2){
+                        reference.child(usrId).child("sust").setValue("0");
+                        sustt ="0";
+                    }
+
+                    if(duu.length()==2){
+                        reference.child(usrId).child("du").setValue("0");
+                        duu = "0";
+                    }
+                }
             }
         }
         if(!hsgpa.equals(hscgpa.getText().toString()))
@@ -240,6 +313,43 @@ public class updateData extends AppCompatActivity implements View.OnClickListene
                 reference.child(usrId).child("hsgpa").setValue(hscgpa.getText().toString());
                 hsgpa=hscgpa.getText().toString();
                 check=true;
+
+                double d=Double.parseDouble(ssgpa);
+                double a=Double.parseDouble(hsgpa);
+
+                a=a+d;
+
+                if(a<10.0){
+                    if(austt.length()==2){
+                        reference.child(usrId).child("aust").setValue("0");
+                        austt="0";
+                    }
+
+                    if(buett.length()==2){
+                        reference.child(usrId).child("buet").setValue("0");
+                        buett="0";
+                    }
+
+                    if(iutt.length()==2){
+                        reference.child(usrId).child("iut").setValue("0");
+                        iutt ="0";
+
+                    }
+                }
+
+                if(a<9.0){
+                    if(sustt.length()==2){
+                        reference.child(usrId).child("sust").setValue("0");
+                        sustt ="0";
+                    }
+
+                    if(duu.length()==2){
+                        reference.child(usrId).child("du").setValue("0");
+                        duu = "0";
+                    }
+                }
+
+
             }
         }
         return check;
