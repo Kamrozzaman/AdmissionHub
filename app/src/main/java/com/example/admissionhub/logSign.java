@@ -141,7 +141,7 @@ public class logSign extends AppCompatActivity implements View.OnClickListener{
                         }
 
                         else{
-                            Toast.makeText(logSign.this,"Login Failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(logSign.this,"Wrong Email or Password",Toast.LENGTH_SHORT).show();
                         }
 
                     }

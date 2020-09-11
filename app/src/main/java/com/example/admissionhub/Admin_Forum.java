@@ -144,6 +144,7 @@ public class Admin_Forum extends AppCompatActivity implements  AdapterView.OnIte
         reference.child(id).child("apend").setValue(apend);
         reference.child(id).child("exm").setValue(exm);
 
+
         Toast.makeText(Admin_Forum.this,"Information Updated",Toast.LENGTH_SHORT).show();
 
 

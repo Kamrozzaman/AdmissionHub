@@ -1,6 +1,9 @@
 package com.example.admissionhub;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +12,26 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Notices extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
     String austt,juu,iutt,buett,sustt,duu,quiz_marks;
+
+    RecyclerView recyclerView;
+    NoticeAdapter adapter;
+    List<NoticeInfo> NoticeList;
+
+    DatabaseReference dr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +58,33 @@ public class Notices extends AppCompatActivity {
         iutt = getIntent().getStringExtra("IUT");
         buett = getIntent().getStringExtra("BUET");
         quiz_marks =getIntent().getStringExtra("QUIZ_MARKS");
+
+        NoticeList = new ArrayList<>();
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        dr = FirebaseDatabase.getInstance().getReference().child("Notices");
+
+        dr.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    NoticeInfo noti = dataSnapshot1.getValue(NoticeInfo.class);
+                    //Toast.makeText(Notices.this, noti.getTitle(), Toast.LENGTH_SHORT).show();
+                    NoticeList.add(new NoticeInfo(noti.getTitle(),noti.getDescription()));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        adapter = new NoticeAdapter(this , NoticeList);
+        recyclerView.setAdapter(adapter);
     }
 
     public boolean onCreateOptionsMenu(Menu menu)

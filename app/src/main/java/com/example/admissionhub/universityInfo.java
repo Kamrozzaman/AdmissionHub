@@ -4,6 +4,10 @@ public class universityInfo {
 
     private String university,apstart,apend,exm,uid;
 
+    public universityInfo(){
+
+    }
+
     public universityInfo(String university, String apstart, String apend, String exm, String uid) {
         this.university = university;
         this.apstart = apstart;
