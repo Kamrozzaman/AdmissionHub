@@ -17,15 +17,16 @@
     <ImageView
         android:layout_width="234dp"
         android:layout_height="160dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/graduate" />
+        android:src="@drawable/graduate2" />
 
     <TextView
         android:id="@+id/fullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:text="Rahat Chowdhury"
         android:textColor="@color/colorAccent"
         android:textSize="30dp"

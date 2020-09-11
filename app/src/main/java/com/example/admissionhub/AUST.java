@@ -68,9 +68,11 @@ public class AUST extends AppCompatActivity  {
 
 
 
-        /*dr = FirebaseDatabase.getInstance().getReference().child("UniversityInfo");
+        dr = FirebaseDatabase.getInstance().getReference().child("UniversityInfo").child(id);
 
-        dr.addValueEventListener(new ValueEventListener() {
+
+
+        /*dr.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
@@ -97,9 +99,9 @@ public class AUST extends AppCompatActivity  {
 
 
 
-        text1.setText(apstart);
-        text2.setText(apend);
-        text3.setText(exm);
+        text1.setText("22/08/2020");
+        text2.setText("25/08/2020");
+        text3.setText("05/09/2020");
 
     }
 

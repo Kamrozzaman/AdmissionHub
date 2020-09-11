@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,6 +16,10 @@ public class DU extends AppCompatActivity {
     FirebaseAuth mAuth;
     String email,password,fllname,phn,grp,ssgpa,hsgpa,usrId;
     String austt,juu,iutt,buett,sustt,duu,quiz_marks;
+
+    String id = "-MGhRxtCk4a9R2sFN32i";
+    String apstart,apend,exm;
+    TextView text1,text2,text3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,15 @@ public class DU extends AppCompatActivity {
         iutt = getIntent().getStringExtra("IUT");
         buett = getIntent().getStringExtra("BUET");
         quiz_marks =getIntent().getStringExtra("QUIZ_MARKS");
+
+        text1 = (TextView) findViewById(R.id.text1);
+        text2 = (TextView) findViewById(R.id.text2);
+        text3 = (TextView) findViewById(R.id.text3);
+
+        text1.setText("13/08/2020");
+        text2.setText("30/08/2020");
+        text3.setText("04/09/2020");
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu)
