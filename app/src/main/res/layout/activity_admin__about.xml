@@ -285,7 +285,29 @@
                 android:layout_gravity="center"
                 android:text="An Enthusiast and Determined"/>
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="All Rights Reserved by Team indomitables_[3]"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="20dp"/>
+
+            </LinearLayout>
+
         </LinearLayout>
+
+
+
+
     </ScrollView>
 
 </LinearLayout>

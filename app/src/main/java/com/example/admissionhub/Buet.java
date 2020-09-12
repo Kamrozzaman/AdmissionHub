@@ -52,8 +52,8 @@ public class Buet extends AppCompatActivity {
         text2 = (TextView) findViewById(R.id.text2);
         text3 = (TextView) findViewById(R.id.text3);
 
-        text1.setText("31/08/2020");
-        text2.setText("12/08/2020");
+        text1.setText("12/08/2020");
+        text2.setText("31/08/2020");
         text3.setText("03/09/2020");
     }
 

@@ -100,7 +100,7 @@ public class AUST extends AppCompatActivity  {
 
 
         text1.setText("22/08/2020");
-        text2.setText("25/08/2020");
+        text2.setText("25/09/2020");
         text3.setText("05/09/2020");
 
     }
