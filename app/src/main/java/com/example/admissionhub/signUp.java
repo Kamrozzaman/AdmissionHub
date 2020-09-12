@@ -236,7 +236,7 @@ public class signUp extends AppCompatActivity implements AdapterView.OnItemSelec
         String iut ="0";
         String buet="0";
         String sust ="0";
-        String quiz_marks="-1";
+        String quiz_marks="111";
 
         //Toast.makeText(this, grp, Toast.LENGTH_SHORT).show();
         String key = dr.push().getKey();

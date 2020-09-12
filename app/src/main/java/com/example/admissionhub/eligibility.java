@@ -232,7 +232,7 @@ public class eligibility extends AppCompatActivity implements View.OnClickListen
 
 
 
-
+        Toast.makeText(eligibility.this, "Application Data updated", Toast.LENGTH_SHORT).show();
 
         Intent intt = new Intent(eligibility.this,dashboard.class);
 

@@ -54,7 +54,7 @@ public class Admin_Notices extends AppCompatActivity implements View.OnClickList
             Intent intt = new Intent(Admin_Notices.this,AdminDashboard.class);
             startActivity(intt);
         }
-        else if(item.getItemId()==R.id.LogOutMenuId)
+        else if(item.getItemId()==R.id.newLogOutMenuId)
         {
             FirebaseAuth.getInstance().signOut();
             finish();
@@ -75,7 +75,12 @@ public class Admin_Notices extends AppCompatActivity implements View.OnClickList
 
         dr.child(key).setValue(noti);
 
+        title.setText(null);
+        description.setText(null);
+
         Toast.makeText(Admin_Notices.this, "Notice Added", Toast.LENGTH_SHORT).show();
+
+
 
 
     }

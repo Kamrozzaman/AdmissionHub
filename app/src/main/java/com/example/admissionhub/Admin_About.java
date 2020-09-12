@@ -36,7 +36,7 @@ public class Admin_About extends AppCompatActivity {
             Intent intt = new Intent(Admin_About.this,AdminDashboard.class);
             startActivity(intt);
         }
-        else if(item.getItemId()==R.id.LogOutMenuId)
+        else if(item.getItemId()==R.id.newLogOutMenuId)
         {
             FirebaseAuth.getInstance().signOut();
             finish();

@@ -105,7 +105,7 @@ public class Admin_Forum extends AppCompatActivity implements  AdapterView.OnIte
             Intent intt = new Intent(Admin_Forum.this,AdminDashboard.class);
             startActivity(intt);
         }
-        else if(item.getItemId()==R.id.LogOutMenuId)
+        else if(item.getItemId()==R.id.newLogOutMenuId)
         {
             FirebaseAuth.getInstance().signOut();
             finish();
@@ -146,6 +146,10 @@ public class Admin_Forum extends AppCompatActivity implements  AdapterView.OnIte
 
 
         Toast.makeText(Admin_Forum.this,"Information Updated",Toast.LENGTH_SHORT).show();
+
+        appstart.setText(null);
+        append.setText(null);
+        exam.setText(null);
 
 
        /* String key = reference.push().getKey();

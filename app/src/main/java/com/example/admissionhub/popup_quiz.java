@@ -58,8 +58,15 @@ public class popup_quiz extends AppCompatActivity implements View.OnClickListene
         OkButton = findViewById(R.id.OkButtonId);
 
         curmarkEditText.setText("  "+quiz_marks);
-        prevMarkEditText.setText("  "+prevMark);
 
+
+        if(prevMark.length()==3)
+        {
+            prevMarkEditText.setText("Not attempted before");
+        }
+        else if(prevMark.length()!=3){
+            prevMarkEditText.setText("  " + prevMark);
+        }
         if(quiz_marks.length()==2)
         {
             tryAgainTextView.setVisibility(View.GONE);
